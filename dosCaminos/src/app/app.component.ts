@@ -16,5 +16,19 @@ export class AppComponent {
     new Estado(3,"Chiapas","CHP"),
     new Estado(4,"Durango","DRG")
   ];
- 
+ visible =false;
+
+ name : string = "";
+nBoton : string ="Activar";
+ mostrar(){
+   if(!this.visible){
+     this.visible=true;
+     this.nBoton ="Desactivar"
+   }else{
+     this.visible=false;
+     this.nBoton ="Activar"
+   }
+ }
+ operacion : string = "";
+ operacion2 : string = "";
 }

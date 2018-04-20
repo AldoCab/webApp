@@ -19,3 +19,57 @@
        <b>{{estado.id}}</b> {{estado.nombre}}
       </li>
     </ul>
+    <p *ngIf = "estados.length>3">Son muchos estados {{estados.length}} </p>
+
+    <p [hidden]="!visible">Adios</p>
+    <form>
+      <label>Como te llamas</label>
+
+      <p>Soy capaz de multiplicar por {{7 * 26}} tus habilidades</p>
+      <a (click)="visible=true">Saludar</a>
+   
+      <p [hidden]="!visible">Hola mundo!!!</p>
+    </form>
+
+    <ul>
+      <li *ngFor ="let estado of estados">
+       <a (click)="visible=true">{{estado.clave}}</a>
+     
+      </li>
+    </ul>
+    <!--<p [hidden]="!visible1">{{estado.nombre}}</p>-->
+
+<div class="container">
+  <input [(ngModel)]='name'/>
+<br/>
+<h1>hello {{name}}</h1>
+</div>
+
+<h5>Listado</h5>
+<div style="float:left;padding:10px;margin:0 auto;" *ngIf="estados">
+<select [(ngModel)]='selected'>
+  <option *ngFor="let est of estados" [(ngValue)]="est.clave">{{est.clave}}</option>
+</select>
+
+<p>{{ selected }}</p>
+<a (click)="mostrar()">{{nBoton}}</a>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div >
+  Numero
+  <input [(ngModel)]='operacion'/>
+  <input [(ngModel)]='operacion2'/>
+<br/>
+<h1>{{operacion}}+{{operacion2}} = {{operacion*1 + operacion2*1}} </h1>
+<h1>{{operacion}}-{{operacion2}} = {{operacion - operacion2}}</h1>
+<h1>{{operacion}}*{{operacion2}} = {{operacion * operacion2}}</h1>
+<h1>{{operacion}}/{{operacion2}} = {{operacion / operacion2}}</h1>
+</div>
+
